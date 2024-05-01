@@ -1,19 +1,23 @@
+import {AuthComponent} from "./auth.component";
 import {Route} from "@angular/router";
-import {PublicComponent} from "./public.component";
 
 export const routes: Route[] = [
   {
     path: '',
-    component: PublicComponent,
+    component: AuthComponent,
     children: [
       {
         path: '',
-        redirectTo: 'home',
+        redirectTo: 'login',
         pathMatch: 'full'
       },
       {
-        path: 'home',
-        loadComponent: () => import('../../views/public/home/home.component').then(m => m.HomeComponent)
+        path: 'login',
+        loadComponent: () => import('../../views/auth/login/login.component').then(m => m.LoginComponent)
+      },
+      {
+        path: 'signup',
+        loadComponent: () => import('../../views/auth/signup/signup.component').then(m => m.SignupComponent)
       }
     ]
   }

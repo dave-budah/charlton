@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import {ChangeDetectionStrategy, Component, ViewEncapsulation} from '@angular/core';
 
 @Component({
-  selector: 'app-auth',
+  selector: 'auth',
   standalone: true,
   imports: [],
   templateUrl: './auth.component.html',
-  styleUrl: './auth.component.css'
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AuthComponent {
 

@@ -1,8 +1,8 @@
-<div class="container-xl fixed-top">
+<div class="container-xl fixed-top head">
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="assets/images/logo.png" alt="logo" width="60">
+      <a class="navbar-brand" [routerLink]="['/']">
+        <img src="assets/images/logo.png" alt="logo" width="100">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -10,32 +10,31 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
           <li class="nav-item">
-            <a class="nav-link" [routerLinkActive]="'active'" routerLinkActiveOptions="{exact: true}" aria-current="page" href="#">Home</a>
+            <a class="nav-link" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/']">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/about']">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Projects</a>
+            <a class="nav-link" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/projects']">Projects</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Blog</a>
+            <a class="nav-link" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/blog']">Blog</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
+            <a class="nav-link dropdown-toggle" href="#" role="button" aria-expanded="false">
+              Username
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><a class="dropdown-item" [routerLink]="['/profile']">Profile</a></li>
+              <li><a class="dropdown-item" [routerLink]="['/dashboard']">Dashboard</a></li>
+              <li><a class="dropdown-item" [routerLink]="['/logout']">Logout</a></li>
             </ul>
           </li>
         </ul>
         <div class="d-flex gap-4" role="search">
-          <button type="button" class="icon-button"><i class="bi bi-search"></i></button>
-          <button class="default-btn" type="submit">Search</button>
+          <button type="button" class="icon-button-lite"><i class="bi bi-search"></i></button>
+          <button class="btn-outline-lite" type="submit">ACCOUNT</button>
         </div>
       </div>
     </div>

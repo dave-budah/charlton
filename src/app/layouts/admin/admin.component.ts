@@ -1,12 +1,16 @@
-import { Component } from '@angular/core';
+import {ChangeDetectionStrategy, Component, ViewEncapsulation} from '@angular/core';
+import {RouterOutlet} from "@angular/router";
 
 @Component({
-  selector: 'app-dashboard',
+  selector: 'admin',
   standalone: true,
-  imports: [],
-  templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.css'
+  imports: [
+    RouterOutlet
+  ],
+  templateUrl: './admin.component.html',
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DashboardComponent {
+export class AdminComponent {
 
 }
