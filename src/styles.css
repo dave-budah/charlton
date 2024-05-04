@@ -266,7 +266,7 @@ nav .navbar-toggler {
   text-align-last: left;
   display: none;
   list-style: none;
-  background-color: #fff;
+  background: #fff;
   background-clip: padding-box;
   border: 0 !important;
   border-radius: .25rem;
@@ -414,6 +414,9 @@ section.about {
   padding-top: 8rem;
   padding-bottom: 8rem;
 }
+section.contact h5,
+section.projects h5,
+section.blog h5,
 section.about h5 {
   position: relative;
   width: max-content;
@@ -423,6 +426,9 @@ section.about h5 {
   margin-left: 3rem;
   margin-bottom: 1rem;
 }
+section.contact h5::before,
+section.projects h5::before,
+section.blog h5::before,
 section.about h5::before {
   content: "";
   position: absolute;
@@ -433,13 +439,19 @@ section.about h5::before {
   background-color: var(--tertiary-color);
 
 }
+section.contact h2,
+section.projects h2,
+section.blog h2,
 section.about h2 {
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-base);
   font-weight: 600;
   color: var(--primary-lite-color);
 }
+section.contact h2 span,
+section.projects h2 span,
+section.blog h2 span,
 section.about h2 span {
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-base);
   font-weight: 800;
   color: var(--tertiary-color);
 }
@@ -473,17 +485,6 @@ section.about .img img {
 section.projects {
   padding-top: 8rem;
   padding-bottom: 8rem;
-}
-section.projects h2 {
-  text-align: center;
-  font-size: var(--font-size-xl);
-  font-weight: 600;
-  color: var(--primary-lite-color);
-}
-section.projects h2 span {
-  font-size: var(--font-size-xl);
-  font-weight: 800;
-  color: var(--tertiary-color);
 }
 section.projects .product-card {
   width: 100%;
@@ -535,35 +536,7 @@ section.contact {
   padding-top: 8rem;
   padding-bottom: 8rem;
 }
-section.contact h5 {
-  position: relative;
-  width: max-content;
-  font-size: var(--font-size-lg);
-  font-weight: 600;
-  color: var(--tertiary-color);
-  margin-left: 3rem;
-  margin-bottom: 1rem;
-}
-section.contact h5::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: -2.6rem;
-  width: 2.5rem;
-  height: 2px;
-  background-color: var(--tertiary-color);
 
-}
-section.contact h2 {
-  font-size: var(--font-size-lg);
-  font-weight: 600;
-  color: var(--primary-lite-color);
-}
-section.contact h2 span {
-  font-size: var(--font-size-lg);
-  font-weight: 800;
-  color: var(--tertiary-color);
-}
 section.contact .img {
   width: 100%;
   height: 40svh;
@@ -606,6 +579,99 @@ section.contact .icon {
 section.contact .icon i {
   font-size: var(--font-size-lg);
   color: var(--primary-lite-color);
+}
+section.blog {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+section.blog .articles__row {
+  margin-top: 4rem;
+}
+section.blog .blog__card {
+  width: 100%;
+  max-width: 380px;
+  margin: 1rem 0;
+  height: 450px;
+  border-radius: 25px;
+  position: relative;
+  cursor: pointer;
+  animation: 2s ease-out;
+}
+section.blog .blog__card .img {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 25px;
+}
+section.blog .blog__card .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform-origin: 50% 65%;
+  transition: transform 5s, filter 3s ease-in-out;
+  filter: brightness(100%);
+}
+section.blog .blog__card:hover .img img {
+  filter: brightness(100%);
+  transform: scale(3);
+}
+section.blog .blog__card .detail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+  padding: 2rem 0;
+  border-radius: 25px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+}
+section.blog .blog__card .detail .author .avatar-sm {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+section.blog .blog__card .detail .author .avatar-sm img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+section.blog .blog__card .detail p {
+  color: var(--primary-lite-color);
+  font-weight: 400;
+  font-size: var(--font-size-base);
+}
+section.blog .blog__card .detail .content {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+}
+section.blog .blog__card .detail .blog-title {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+}
+section.blog .blog__card .detail .blog-title a {
+  color: var(--primary-lite-color);
+  transition: all 0.3s ease-in-out;
+}
+section.blog .blog__card .detail .blog-title a:hover {
+  opacity: .7;
+}
+section.blog .blog__card .detail .content .author {
+  display: flex;
+  align-items: center;
+  column-gap: .5rem;
+}
+ .dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--primary-lite-color);
+   margin-bottom: 1rem;
 }
 
 
@@ -664,6 +730,22 @@ section.contact .icon i {
   section.about .img {
     width: 100%;
     margin: auto;
+  }
+  section.contact h2,
+  section.projects h2,
+  section.blog h2,
+  section.about h2 {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    color: var(--primary-lite-color);
+  }
+  section.contact h2 span,
+  section.projects h2 span,
+  section.blog h2 span,
+  section.about h2 span {
+    font-size: var(--font-size-xl);
+    font-weight: 800;
+    color: var(--tertiary-color);
   }
 }
 
